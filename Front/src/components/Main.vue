@@ -1,10 +1,13 @@
 <script setup>
-  import Logo from './logo/Logo.vue';
+  import Logo from '/@components/logo/Logo.vue';
   import {
     AtSymbolIcon,
     BookmarkIcon,
     ChatBubbleBottomCenterTextIcon,
+    UserIcon,
+    ChatBubbleLeftRightIcon,
   } from '@heroicons/vue/24/outline';
+  import { HomeIcon as HomeSolidIcon } from '@heroicons/vue/24/solid'
 </script>
 
 <template>
@@ -126,16 +129,20 @@
           </div>
           <!-- Main Content Area -->
           <div class="flex flex-1 flex-col border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800 sm:block sm:border-x">
-              <!-- router main -->
+            <!-- router main -->
             <router-view></router-view>
-              <nav class="sticky bottom-0 z-10 flex h-[65px] border-t bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 sm:hidden">
+              <nav class="sticky bottom-0 z-10 flex h-[65px] border-t bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-80 sm:hidden">
                   <!-- Home Button -->
-                  <button>
+                  <button class="flex flex-1 flex-col items-center justify-center gap-1">
   <!--                <button onclick="navigateTo('/')">-->
                       <!-- Home Icon and Label -->
+                    <HomeSolidIcon class="h-6 w-6" />
+                    <span class="text-xs">홈</span>
                   </button>
                   <!-- List Button -->
                   <button>
+                    <ChatBubbleLeftRightIcon class="h-6 w-6" />
+                    <span class="text-xs">목록</span>
   <!--                <button onclick="openList()">-->
                       <!-- List Icon and Label -->
                   </button>
@@ -143,6 +150,8 @@
                   <button>
   <!--                <button onclick="toggleUserInfo()">-->
                       <!-- User Info Icon and Label -->
+                    <UserIcon class="h-6 w-6" />
+                    <span class="text-xs">나</span>
                   </button>
               </nav>
           </div>
@@ -160,6 +169,7 @@
     },
     data() {
       return {
+        pathname: '/',
         roomList: [
           {id: 1, name: 'Go', logo_url: '../icon/go.svg', newDate: null, newChat: '채팅 없음', newCount: 2},
           {id: 2, name: 'TypeScript', logo_url: '../icon/ts.svg', newDate: null, newChat: '타입 스크립트 왜씀?', newCount: 0},
