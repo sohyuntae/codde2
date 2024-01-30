@@ -5,9 +5,6 @@
     AtSymbolIcon,
     BookmarkIcon,
     ChatBubbleBottomCenterTextIcon,
-    ChatBubbleLeftRightIcon,
-    HomeIcon as HomeOutlineIcon,
-    UserIcon
   } from '@heroicons/vue/24/outline';
 </script>
 
@@ -130,9 +127,8 @@
           </div>
           <!-- Main Content Area -->
           <div class="flex flex-1 flex-col border-neutral-200 bg-white dark:border-neutral-700 dark:bg-neutral-800 sm:block sm:border-x">
-              <!-- Children (Main Content) -->
-            <intro />
-              <!-- Bottom Navigation (for mobile) -->
+              <!-- router main -->
+            <router-view></router-view>
               <nav class="sticky bottom-0 z-10 flex h-[65px] border-t bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 sm:hidden">
                   <!-- Home Button -->
                   <button>
@@ -166,29 +162,30 @@
     data() {
       return {
         roomList: [
-          {id: 1, name: 'Go', logo_url: '/logo/icon/go.svg', newDate: null, newChat: '채팅 없음', newCount: 2},
-          {id: 2, name: 'TypeScript', logo_url: '/logo/icon/go.svg', newDate: null, newChat: '타입 스크립트 왜씀?', newCount: 0},
-          {id: 3, name: 'Vue', logo_url: '/logo/icon/go.svg', newDate: null, newChat: '리액트 보다 좋음', newCount: 3},
-          {id: 4, name: 'C++', logo_url: '/logo/icon/go.svg', newDate: null, newChat: 'C+_+', newCount: 0},
-          {id: 5, name: 'Java', logo_url: '/logo/icon/go.svg', newDate: null, newChat: '자바 최강', newCount: 99}
+          {id: 1, name: 'Go', logo_url: './icon/go.svg', newDate: null, newChat: '채팅 없음', newCount: 2},
+          {id: 2, name: 'TypeScript', logo_url: './icon/ts.svg', newDate: null, newChat: '타입 스크립트 왜씀?', newCount: 0},
+          {id: 3, name: 'Vue', logo_url: './icon/vue.svg', newDate: null, newChat: '리액트 보다 좋음', newCount: 3},
+          {id: 4, name: 'C++', logo_url: './icon/c++.svg', newDate: null, newChat: 'C+_+', newCount: 0},
+          {id: 5, name: 'Java', logo_url: './icon/java.svg', newDate: null, newChat: '자바 최강', newCount: 99},
+          {id: 6, name: 'Ruby', logo_url: './icon/ruby.svg', newDate: null, newChat: 'Ruby가 뭐임?', newCount: 0}
         ],
-        query: {
-          id: 4, name: 'Java', logo_url: '/logo/icon/go.svg', newDate: null, newChat: null, newCount: 0
-        }
+        query: {},
+        // query: {
+        //   id: 4, name: 'Java', logo_url: '/logo/icon/go.svg', newDate: null, newChat: null, newCount: 0
+        // }
       }
     },
     methods: {
-      handleItemClick(item, key) {
-        console.log(item);
-        console.log(key);
+      handleItemClick(item) {
+        this.query = item;
         if (item.newCount > 0) {
-          this.setState({
-            roomList: [
-              ...this.roomList.slice(0, key),
-              { ...item, newCount: 0 },
-              ...this.roomList.slice(key + 1)
-            ]
-          });
+          // this.setState({
+          //   roomList: [
+          //     ...this.roomList.slice(0, key),
+          //     { ...item, newCount: 0 },
+          //     ...this.roomList.slice(key + 1)
+          //   ]
+          // });
         }
       },
     },
