@@ -1,6 +1,5 @@
 <script setup>
   import Logo from './logo/Logo.vue';
-  import intro from './intro/Intro.vue';
   import {
     AtSymbolIcon,
     BookmarkIcon,
@@ -162,12 +161,12 @@
     data() {
       return {
         roomList: [
-          {id: 1, name: 'Go', logo_url: './icon/go.svg', newDate: null, newChat: '채팅 없음', newCount: 2},
-          {id: 2, name: 'TypeScript', logo_url: './icon/ts.svg', newDate: null, newChat: '타입 스크립트 왜씀?', newCount: 0},
-          {id: 3, name: 'Vue', logo_url: './icon/vue.svg', newDate: null, newChat: '리액트 보다 좋음', newCount: 3},
-          {id: 4, name: 'C++', logo_url: './icon/c++.svg', newDate: null, newChat: 'C+_+', newCount: 0},
-          {id: 5, name: 'Java', logo_url: './icon/java.svg', newDate: null, newChat: '자바 최강', newCount: 99},
-          {id: 6, name: 'Ruby', logo_url: './icon/ruby.svg', newDate: null, newChat: 'Ruby가 뭐임?', newCount: 0}
+          {id: 1, name: 'Go', logo_url: '../icon/go.svg', newDate: null, newChat: '채팅 없음', newCount: 2},
+          {id: 2, name: 'TypeScript', logo_url: '../icon/ts.svg', newDate: null, newChat: '타입 스크립트 왜씀?', newCount: 0},
+          {id: 3, name: 'Vue', logo_url: '../icon/vue.svg', newDate: null, newChat: '리액트 보다 좋음', newCount: 3},
+          {id: 4, name: 'C++', logo_url: '../icon/c++.svg', newDate: null, newChat: 'C+_+', newCount: 0},
+          {id: 5, name: 'Java', logo_url: '../icon/java.svg', newDate: null, newChat: '자바 최강', newCount: 99},
+          {id: 6, name: 'Ruby', logo_url: '../icon/ruby.svg', newDate: null, newChat: 'Ruby가 뭐임?', newCount: 0}
         ],
         query: {},
         // query: {

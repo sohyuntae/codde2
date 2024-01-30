@@ -1,5 +1,5 @@
 <script setup>
-import ContentMain from '../ContentMain.vue';
+import ContentMain from '/@components/ContentMain.vue';
 </script>
 
 <template>
